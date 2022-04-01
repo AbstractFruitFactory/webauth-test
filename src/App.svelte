@@ -13,7 +13,13 @@
     const assertionObj = await navigator.credentials.get({
           publicKey: {
               challenge: new Uint8Array(),
-              allowCredentials: []
+              rpId: document.domain,
+              allowCredentials: [
+                  {
+                      type: "public-key",
+                      id: new Uint8Array()
+                  }
+              ]
           }
       });
     console.log(assertionObj)

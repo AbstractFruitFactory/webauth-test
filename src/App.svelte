@@ -11,20 +11,11 @@
 
   (async () => {
     const assertionObj = await navigator.credentials.get({
-      publicKey: {
-        challenge: new Uint8Array(1),
-        rpId: document.domain,
-        allowCredentials: [
-          {
-            type: "public-key",
-            id: new Uint8Array(1),
-            transports: ["internal"],
-          },
-        ],
-        userVerification: "required",
-      },
-    });
-    console.log(assertionObj);
+          publicKey: {
+              challenge: new Uint8Array(8).fill(1),
+          }
+      });
+    console.log(assertionObj)
   })();
 </script>
 
